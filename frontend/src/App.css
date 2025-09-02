@@ -1,0 +1,282 @@
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* 应用布局 */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 导航栏样式 */
+.nav {
+  background: #2c3e50;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.nav a.active {
+  background-color: #3498db;
+}
+
+/* 主内容区域 */
+.main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 页面通用样式 */
+.page {
+  max-width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* 聊天页面样式 */
+.chat-page .messages {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #f8f9fa;
+}
+
+.chat-page .msg {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.chat-page .msg.user {
+  background: #007bff;
+  color: white;
+  margin-left: auto;
+  text-align: right;
+}
+
+.chat-page .msg.assistant {
+  background: white;
+  border: 1px solid #dee2e6;
+  margin-right: auto;
+}
+
+.chat-page .composer {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.chat-page .composer input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.chat-page .composer button {
+  padding: 0.75rem 1.5rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.chat-page .composer button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* 工具栏样式 */
+.toolbar {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #dee2e6;
+}
+
+.toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.toolbar select,
+.toolbar input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* 按钮样式 */
+button {
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* 输入框样式 */
+input, textarea, select {
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+/* 代码编辑器样式 */
+.code-editor {
+  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+/* 结果展示样式 */
+.result-section {
+  margin-top: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-content {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* 标签页样式 */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+.tab-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  transition: all 0.2s ease;
+}
+
+.tab-button.active {
+  background: #007bff;
+  color: white;
+}
+
+.tab-button:hover:not(.active) {
+  background: #f8f9fa;
+}
+
+/* 状态指示器 */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-success { background: #28a745; color: white; }
+.status-warning { background: #ffc107; color: #212529; }
+.status-error { background: #dc3545; color: white; }
+.status-info { background: #17a2b8; color: white; }
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar label {
+    margin-bottom: 0.5rem;
+  }
+}

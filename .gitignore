@@ -1,0 +1,13 @@
+.env
+.env-llm
+.idea/
+*.pyc
+*.mp3
+node_modules
+middleware/mysql
+middleware/rabbitmq
+middleware/redis
+middleware/minio
+middleware/milvus
+middleware/milvus-minio
+middleware/etcd
