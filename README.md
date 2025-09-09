@@ -1,6 +1,6 @@
 # SDU AI Code Analysis System
 
-基于AI的智能代码分析系统，提供代码检查、题目分析和学生代码诊断功能。
+基于AI的智能代码分析系统，提供代码检查、题目分析和学生代码诊断功能。(AI-powered Programming Problem Tutor Agent with a web UI, API gateway, code sandbox, and auxiliary services (OCR, TTS, embeddings, vector DB). It analyzes problems, runs and evaluates user code in isolated sandboxes, provides debugging assistance, and supports end-to-end workflows powered by LLMs. )
 
 ## 🚀 快速启动
 
